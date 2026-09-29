@@ -46,12 +46,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" className={`${inter.variable} ${newsreader.variable}`}>
       <body className="flex min-h-screen flex-col">
         <SkipLink />
-        <PrototypeBanner />
         <Header />
         <main id="main" className="flex-1">
           {children}
         </main>
         <Footer />
+        <PrototypeBanner />
       </body>
     </html>
   );
