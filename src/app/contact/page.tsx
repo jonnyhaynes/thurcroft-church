@@ -123,7 +123,7 @@ export default async function ContactPage() {
                 required.
               </p>
               <div className="mt-8">
-                <EnquiryForm />
+                <EnquiryForm configured={Boolean(process.env.WEB3FORMS_ACCESS_KEY)} />
               </div>
             </div>
           </div>

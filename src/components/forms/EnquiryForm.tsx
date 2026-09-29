@@ -21,7 +21,7 @@ const topics = [
 const fieldClass =
   "mt-2 block w-full rounded-md border border-line bg-white px-4 py-3 text-base text-ink placeholder:text-ink-mute";
 
-export function EnquiryForm() {
+export function EnquiryForm({ configured }: { configured: boolean }) {
   const [status, setStatus] = useState<Status>("idle");
   const [message, setMessage] = useState("");
 
@@ -54,6 +54,32 @@ export function EnquiryForm() {
       setStatus("error");
       setMessage("Sorry, we could not send your message just now. Please try again, or call us instead.");
     }
+  }
+
+  // Without a form provider configured, the form cannot deliver anything. Showing it
+  // anyway means someone fills in six fields and only then finds out it did not work.
+  if (!configured) {
+    return (
+      <div className="rounded-card border border-line bg-white p-6">
+        <h3 className="font-serif text-2xl text-ink">Please contact us directly</h3>
+        <p className="mt-3 text-base leading-relaxed text-ink-soft">
+          Our online enquiry form is not available yet. In the meantime, please call us or
+          call in — we would be glad to hear from you.
+        </p>
+        <p className="mt-4 text-lg">
+          <a href={site.phoneHref} className="text-accent no-underline hover:underline">
+            {site.phone}
+          </a>
+        </p>
+        <p className="mt-1 text-base leading-relaxed text-ink-soft">
+          {site.name}, {site.address.street}, {site.address.locality}, {site.address.region}{" "}
+          {site.address.postcode}
+        </p>
+        <p className="mt-4 text-sm text-ink-mute">
+          The church is open on Thursday mornings, 9:30am–12:30pm, and on Sunday mornings.
+        </p>
+      </div>
+    );
   }
 
   if (status === "success") {
