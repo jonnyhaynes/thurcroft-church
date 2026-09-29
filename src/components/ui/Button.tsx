@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Variant = "primary" | "secondary" | "ghost";
+type Variant = "primary" | "secondary" | "ghost" | "inverse" | "inverseOutline";
 type Size = "md" | "lg";
 
 const base =
@@ -11,6 +11,11 @@ const variants: Record<Variant, string> = {
   primary: "bg-accent text-paper hover:bg-accent-deep",
   secondary: "border border-ink/25 text-ink hover:bg-paper-deep",
   ghost: "text-accent underline decoration-1 underline-offset-4 hover:decoration-2",
+  // For ink grounds, where ink-on-paper reads as nothing. Callers on a dark
+  // surface also need `focus-visible:outline-paper`, since the global ring is
+  // accent-deep.
+  inverse: "bg-paper text-ink hover:bg-paper-deep",
+  inverseOutline: "border border-paper/70 text-paper hover:bg-paper/15",
 };
 
 const sizes: Record<Size, string> = {
