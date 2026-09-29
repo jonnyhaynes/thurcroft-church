@@ -15,8 +15,12 @@ exist yet. Being honest about that beats following a process that isn't real:
 - **Deploys happen from `main`.** Vercel builds and deploys `main` automatically, so
   anything merged with a broken build goes straight to production.
 - **CI runs the checks on every pull request** — `.github/workflows/ci.yml` runs
-  lint, type-check and build, and also on pushes to `main`. Still run them locally
-  first; CI is a backstop, not a substitute for looking at your own work.
+  lint, type-check and build. Two things to know: GitHub only registers workflows
+  that exist on the default branch, so it does nothing until that file is merged to
+  `main`; and **Vercel already runs the same checks** on every PR preview, because
+  Next.js lints and type-checks during `next build`. Treat CI as an explicit,
+  Vercel-independent gate rather than the only thing standing between a mistake and
+  production. Still run the checks locally first.
 - **There is no test runner.** No Vitest, Jest or `npm test` script. The test-first
   step below is the aspiration; today the gates are `npm run lint`,
   `npm run typecheck` and `npm run build`.
@@ -52,8 +56,10 @@ exist yet. Being honest about that beats following a process that isn't real:
    npm run lint && npm run typecheck && npm run build
    ```
 
-   CI (`.github/workflows/ci.yml`) runs the same three checks against the PR. Do
-   not claim a check passed unless you ran it yourself.
+   CI (`.github/workflows/ci.yml`) runs the same three checks, though it is only
+   active once that file is on the default branch. Vercel also builds the PR and
+   will fail on a broken build. Do not claim a check passed unless you ran it
+   yourself.
 7. **Land** -- a human reviews the diff against the plan and merges. Then sync the
    main branch, delete the branch, and file any deferred follow-up work as tracked
    tickets.
