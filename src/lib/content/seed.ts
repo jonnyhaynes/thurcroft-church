@@ -46,8 +46,8 @@ export const gallery: ImageRef[] = [
 ];
 
 export const heroImage: ImageRef = {
-  src: `${IMG}/church-01.jpg`,
-  alt: "St Simon and St Jude Parish Church seen across the lawn from the south-west, with its tower, tall arched window and long tiled roof.",
+  src: `${IMG}/home-hero.jpg`,
+  alt: "St Simon and St Jude Parish Church on a bright day, its tower and tall arched window rising above the green church lawn.",
 };
 
 export const serviceTimes: ServiceTime[] = [

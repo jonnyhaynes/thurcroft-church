@@ -1,4 +1,5 @@
 const dimensions: Record<string, { width: number; height: number }> = {
+  "/images/church/home-hero.jpg": { width: 1435, height: 957 },
   "/images/church/church-01.jpg": { width: 1024, height: 464 },
   "/images/church/church-02.jpg": { width: 1024, height: 1065 },
   "/images/church/church-03.jpg": { width: 1024, height: 1061 },
