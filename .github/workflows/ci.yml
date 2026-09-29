@@ -4,6 +4,8 @@ on:
   pull_request:
   push:
     branches: [main]
+  # Lets you re-run the checks by hand from the Actions tab or `gh workflow run`.
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
