@@ -1,10 +1,12 @@
 import type { MetadataRoute } from "next";
 
-import { site } from "@/lib/site";
-
+/**
+ * Prototype: this deployment must not appear in search results, so that it
+ * cannot be mistaken for the parish's real website. Remove this restriction
+ * only if the parish takes the site on and it goes live properly.
+ */
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/studio", "/api/"] },
-    sitemap: `${site.url}/sitemap.xml`,
+    rules: { userAgent: "*", disallow: "/" },
   };
 }

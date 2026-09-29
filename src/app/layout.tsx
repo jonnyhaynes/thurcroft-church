@@ -4,6 +4,7 @@ import { Inter, Newsreader } from "next/font/google";
 import "@/styles/globals.css";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { PrototypeBanner } from "@/components/layout/PrototypeBanner";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { site } from "@/lib/site";
 
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
   },
-  robots: { index: true, follow: true },
+  // Prototype: keep it out of search results so it cannot be mistaken for the
+  // parish's real website.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -43,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en-GB" className={`${inter.variable} ${newsreader.variable}`}>
       <body className="flex min-h-screen flex-col">
         <SkipLink />
+        <PrototypeBanner />
         <Header />
         <main id="main" className="flex-1">
           {children}
