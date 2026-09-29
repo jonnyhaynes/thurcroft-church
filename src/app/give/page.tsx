@@ -54,13 +54,13 @@ export default function GivePage() {
           <Card className="self-start">
             <Image
               src="/images/church/walls-fund-flyer.jpg"
-              alt="Fundraising flyer for the Thurcroft Parish Church walls project"
+              alt="Two photographs of the church interior showing damaged, crumbling plaster on the walls around the altar and east window."
               {...getDimensions("/images/church/walls-fund-flyer.jpg")}
               sizes="(min-width: 1024px) 380px, 100vw"
               className="h-auto w-full rounded-md"
             />
             <p className="mt-4 text-sm text-ink-mute">
-              Our fundraising flyer for the walls project.
+              The condition of the walls the fundraising is for.
             </p>
           </Card>
         </div>

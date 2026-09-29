@@ -15,17 +15,39 @@ const IMG = "/images/church";
 // downloaded from the ACNY media library and must be reviewed with the church
 // before launch. See docs/alt-text-review.md.
 export const gallery: ImageRef[] = [
-  { src: `${IMG}/church-01.jpg`, alt: "St Simon and St Jude Parish Church, Thurcroft" },
-  { src: `${IMG}/church-02.jpg`, alt: "Inside St Simon and St Jude Parish Church" },
-  { src: `${IMG}/church-03.jpg`, alt: "The church building and grounds in Thurcroft" },
-  { src: `${IMG}/church-04.jpg`, alt: "A view of St Simon and St Jude Parish Church" },
-  { src: `${IMG}/church-05.jpg`, alt: "The congregation and church interior" },
-  { src: `${IMG}/church-06.png`, alt: "St Simon and St Jude Parish Church" },
+  {
+    src: `${IMG}/church-01.jpg`,
+    alt: "St Simon and St Jude Parish Church seen across the lawn from the south-west, with its tower, tall arched window and long tiled roof.",
+  },
+  {
+    src: `${IMG}/church-02.jpg`,
+    alt: "The church at dusk, its tower standing against pink and purple streaked clouds, with the porch light on and the door open.",
+    caption: "The church at dusk.",
+  },
+  {
+    src: `${IMG}/church-03.jpg`,
+    alt: "A black-and-white photograph of New Orchard Farm, a large brick farmhouse with a white porch and outbuildings.",
+    caption: "New Orchard Farm, where the first worshipping community met in 1915.",
+  },
+  {
+    src: `${IMG}/church-04.jpg`,
+    alt: "A faded photograph of the north side of the church, showing the long nave with its rows of windows and the parish noticeboard.",
+  },
+  {
+    src: `${IMG}/church-05.jpg`,
+    alt: "An aerial view of the church beside the old timber-framed church hall, with the village green and terraced houses beyond.",
+    caption: "The church and the old church hall from the air.",
+  },
+  {
+    src: `${IMG}/church-06.png`,
+    alt: "A two-part historical image: a black-and-white photograph of the original timber-framed church, and a 1965 colour photograph of the same building in use as the church hall.",
+    caption: "The original church building, which later became the church hall.",
+  },
 ];
 
 export const heroImage: ImageRef = {
   src: `${IMG}/church-01.jpg`,
-  alt: "St Simon and St Jude Parish Church, Thurcroft",
+  alt: "St Simon and St Jude Parish Church seen across the lawn from the south-west, with its tower, tall arched window and long tiled roof.",
 };
 
 export const serviceTimes: ServiceTime[] = [
@@ -178,7 +200,7 @@ export const events: ChurchEvent[] = [
     recurring: { day: "First Friday of the month", time: "From 10:00am" },
     venue: "St Simon and St Jude, Church Street, Thurcroft",
     tags: ["Refreshments", "Community"],
-    image: gallery[4],
+    image: gallery[1],
   },
 ];
 
@@ -199,7 +221,7 @@ export const news: NewsPost[] = [
         text: "The church building opened for worship on 1st July 1939, and caring for it is an ongoing act of stewardship by the whole parish.",
       },
     ],
-    coverImage: gallery[2],
+    coverImage: gallery[3],
   },
 ];
 
@@ -346,7 +368,7 @@ export const pages: ContentPage[] = [
         _type: "paragraph",
         text: "If you are marrying in another parish and need your banns called in Thurcroft, please visit the church and this will also be arranged.",
       },
-      { _type: "image", src: gallery[3].src, alt: gallery[3].alt },
+      { _type: "image", src: gallery[1].src, alt: gallery[1].alt },
     ],
   },
   {
@@ -440,8 +462,9 @@ export const pages: ContentPage[] = [
       },
       {
         _type: "image",
-        src: `${IMG}/old-church-building.jpg`,
-        alt: "The old St Simon and St Jude church building, which later became the Church Hall",
+        src: `${IMG}/church-05.jpg`,
+        alt: "An aerial view of the church beside the old timber-framed church hall, with the village green beyond.",
+        caption: "The church and the old church hall from the air.",
       },
     ],
   },
