@@ -60,7 +60,7 @@ All content currently lives in `src/lib/content/seed.ts`, assembled from the par
 A Church Near You listing with a light editorial pass. To move to the CMS, see
 `docs/sanity-setup.md`.
 
-**Content is not covered by the code licence** — see [Licence](#licence).
+**Content is not covered by the code copyright** — see [Licence](#licence).
 
 ## Accessibility
 
@@ -85,12 +85,13 @@ Photo alt text is currently **provisional** and needs review — see `docs/alt-t
 
 ## Licence
 
-**Code:** MIT — see [LICENSE](LICENSE). You are free to reuse the code.
+**Code:** All rights reserved — see [LICENSE](LICENSE). No permission is granted to copy, reuse,
+modify or redistribute the code.
 
 **Content:** the text, names, contact details and photographs relating to St Simon and St Jude,
 Thurcroft are the property of the parish or their respective owners. They are included in this
-repository **for demonstration purposes only**, are **not** covered by the MIT licence, and should
-not be reused elsewhere without permission.
+repository **for demonstration purposes only**, are covered by **neither** the code copyright
+**nor** any licence, and should not be reused elsewhere without permission.
 
 ## Disclaimer
 
