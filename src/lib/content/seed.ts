@@ -390,7 +390,7 @@ export const pages: ContentPage[] = [
       { _type: "heading", text: "Who to contact" },
       {
         _type: "paragraph",
-        text: "If you are concerned that a child or adult has been harmed, or may be at risk of harm, please contact our Parish Safeguarding Officer, Rev Dave Johnson, on [redacted], or the Diocesan Safeguarding Adviser, Sian Checkley, or Assistant Safeguarding Advisers Elina Penttila and Rachel Tankard.",
+        text: "If you are concerned that a child or adult has been harmed, or may be at risk of harm, please contact our Parish Safeguarding Officer, Rev Dave Johnson, via the church on 01909 318059, or the Diocesan Safeguarding Adviser for the Diocese of Sheffield.",
       },
       {
         _type: "paragraph",
@@ -412,7 +412,7 @@ export const pages: ContentPage[] = [
       },
       {
         _type: "paragraph",
-        text: "Call in at the church to fill in a form, or contact the Churchwardens, Julie Bringloe on [redacted] or Claire Stancer on [redacted].",
+        text: "Call in at the church to fill in a form, or contact the Churchwardens via the church on 01909 318059.",
       },
     ],
   },

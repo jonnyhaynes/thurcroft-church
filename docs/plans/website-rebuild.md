@@ -160,9 +160,9 @@ Content to port, with a light editorial pass:
 | `/services` | ACNY Days & Times | 1st–3rd Sun Holy Communion 10:30; 4th Sun All Age; Wed after 4th Said HC 10:00 |
 | `/weddings` | ACNY Wedding Enquiries | Banns, Thurs/Sun mornings |
 | `/baptisms` | ACNY Baptism Enquiries | 1st & 3rd Sundays; booking process |
-| `/safeguarding` | ACNY Safeguarding | PSO Rev Dave Johnson [redacted] + Diocesan advisers |
+| `/safeguarding` | ACNY Safeguarding | PSO and Diocesan advisers (personal contact details redacted) |
 | `/give` | ACNY Fund Raising | SumUp link `pay.sumup.io/b2c/Q618SYSP` + wall fund flyer |
-| `/contact` | ACNY Contact Details | Revd. Canon Miranda Hayes, 01909 318059, [redacted] |
+| `/contact` | ACNY Contact Details | Priest in Charge; church address and phone (personal address redacted) |
 | `/events` | ACNY Thursday Mornings + **Facebook events** | Weekly Thu 9:30–12:30; Willows SEN school gardening |
 | `/news` | ACNY "A New Roof…" + **Facebook posts** | migrate the Facebook back-catalogue as dated news items |
 | flexible pages | Memorial Book, Our Old Church Building, Parish Priests, School Uniform Swap Point, Health & Safety | thin pages; combine where sensible |
