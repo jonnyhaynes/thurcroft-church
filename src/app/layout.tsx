@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Newsreader } from "next/font/google";
 
 import "@/styles/globals.css";
@@ -21,6 +21,11 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
 });
 
+export const viewport: Viewport = {
+  themeColor: "#1f333b",
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
@@ -28,6 +33,7 @@ export const metadata: Metadata = {
     template: `%s — ${site.shortName}`,
   },
   description: site.description,
+  applicationName: site.shortName,
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -36,9 +42,20 @@ export const metadata: Metadata = {
     description: site.description,
     url: site.url,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: `${site.name} — ${site.tagline}`,
+    description: site.description,
+  },
   // Prototype: keep it out of search results so it cannot be mistaken for the
-  // parish's real website.
-  robots: { index: false, follow: false },
+  // parish's real website. Reinforced by robots.txt and, most importantly, the
+  // X-Robots-Tag header in next.config.ts.
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: { index: false, follow: false, noimageindex: true },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

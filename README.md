@@ -97,3 +97,18 @@ not be reused elsewhere without permission.
 Provided as-is, with no warranty of any kind. This is unaffiliated prototype work and does not
 represent the parish. If you are looking for the real church, please use
 [A Church Near You](https://www.achurchnearyou.com/church/17517/).
+
+## Prototype safeguards
+
+Because this is a prototype rather than the parish's real website, it is deliberately kept out of
+search engines and clearly labelled:
+
+- A dismissible **notice bar** is fixed to the bottom of every page.
+- `<meta name="robots">` is set to `noindex, nofollow`, with `noimageindex` for Googlebot.
+- `robots.txt` disallows all crawlers.
+- An **`X-Robots-Tag` HTTP header** is sent for every route, including non-HTML assets — this is the
+  most reliable of the three, as it does not depend on the crawler parsing the page.
+- `sitemap.xml` is still generated, but is not advertised and is disallowed.
+
+To take the site live for real, remove the banner, the `X-Robots-Tag` header in `next.config.ts`,
+the `robots` block in `src/app/layout.tsx`, and the blanket disallow in `src/app/robots.ts`.
