@@ -16,7 +16,6 @@ import {
   getServiceTimes,
   getWeeklyActivities,
 } from "@/lib/content";
-import { getDimensions } from "@/lib/content/image-dims";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -55,37 +54,48 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="border-b border-line">
-        <Container className="grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-gold">
-              {site.tagline}
-            </p>
-            <h1 className="font-serif text-4xl leading-tight text-ink sm:text-5xl">
-              Everyone is welcome at {site.name}.
-            </h1>
-            <p className="mt-6 text-lg leading-relaxed text-ink-soft">
-              At the heart of the community it serves. A warm, inclusive, family-friendly church in
-              Thurcroft, Rotherham — part of a Mission Area with {site.missionArea}.
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/services" size="lg">
-                Service times
-              </ButtonLink>
-              <ButtonLink href="/contact" variant="secondary" size="lg">
-                Plan a visit
-              </ButtonLink>
-            </div>
-          </div>
-          <div className="overflow-hidden rounded-card border border-line">
-            <Image
-              src={hero.src}
-              alt={hero.alt}
-              {...getDimensions(hero.src)}
-              priority
-              sizes="(min-width: 1024px) 50vw, 100vw"
-              className="h-auto w-full object-cover"
-            />
+      <section className="relative isolate overflow-hidden bg-ink">
+        <Image
+          src={hero.src}
+          alt={hero.alt}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[22%_50%]"
+        />
+        {/* Decorative only: .hero-scrim is defined in globals.css and tuned against
+            sampled screenshot pixels, because this photograph is too bright to carry
+            paper-coloured text on its own. */}
+        <div aria-hidden="true" className="hero-scrim pointer-events-none absolute inset-0" />
+
+        <Container className="relative flex min-h-[32rem] flex-col justify-end pb-16 pt-16 sm:min-h-[38rem] sm:pb-20 lg:min-h-[42rem]">
+          <p className="rise text-sm font-semibold uppercase tracking-[0.16em] text-gold-light">
+            {site.tagline}
+          </p>
+          <h1 className="rise rise-1 mt-4 max-w-4xl font-serif text-4xl leading-[1.08] text-paper sm:text-5xl lg:text-6xl">
+            Everyone is welcome at {site.name}.
+          </h1>
+          <p className="rise rise-2 mt-6 max-w-xl text-lg leading-relaxed text-paper/90">
+            At the heart of the community it serves. A warm, inclusive, family-friendly church in
+            Thurcroft, Rotherham — part of a Mission Area with {site.missionArea}.
+          </p>
+          <div className="rise rise-3 mt-8 flex flex-wrap gap-3">
+            <ButtonLink
+              href="/services"
+              variant="inverse"
+              size="lg"
+              className="focus-visible:outline-paper"
+            >
+              Service times
+            </ButtonLink>
+            <ButtonLink
+              href="/contact"
+              variant="inverseOutline"
+              size="lg"
+              className="focus-visible:outline-paper"
+            >
+              Plan a visit
+            </ButtonLink>
           </div>
         </Container>
       </section>

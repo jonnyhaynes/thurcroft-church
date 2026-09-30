@@ -14,6 +14,9 @@
   --color-accent: #2f4a54;
   --color-accent-deep: #1f333b;
   --color-gold: #8f7226;
+  /* For dark grounds only: --color-gold is tuned for paper and fails contrast
+     on ink. */
+  --color-gold-light: #ecd9ab;
 
   --radius-card: 0.625rem;
 
@@ -43,6 +46,73 @@
   ::selection {
     background-color: var(--color-accent);
     color: var(--color-paper);
+  }
+}
+
+/* The homepage hero photograph is bright — pale sky, vivid lawn, pale stone — so
+   overlaid text needs a deliberate darkening layer rather than a hopeful one.
+   Below lg the text block fills most of the hero, so the veil is close to flat:
+   there is no open area left to preserve. From lg the words sit in the lower
+   half and the photograph has room to be seen, so the veil is bottom-heavy and
+   clears by the top. Stop positions are tuned against sampled screenshot pixels,
+   not by eye; see docs/plans/homepage-hero-overlay.md. */
+.hero-scrim {
+  background-image: linear-gradient(
+    to top,
+    var(--color-ink) 0%,
+    color-mix(in srgb, var(--color-ink) 96%, transparent) 40%,
+    color-mix(in srgb, var(--color-ink) 92%, transparent) 72%,
+    color-mix(in srgb, var(--color-ink) 88%, transparent) 100%
+  );
+}
+
+@media (min-width: 1024px) {
+  .hero-scrim {
+    background-image: linear-gradient(
+      to top,
+      var(--color-ink) 0%,
+      color-mix(in srgb, var(--color-ink) 96%, transparent) 34%,
+      color-mix(in srgb, var(--color-ink) 90%, transparent) 52%,
+      color-mix(in srgb, var(--color-ink) 86%, transparent) 68%,
+      color-mix(in srgb, var(--color-ink) 45%, transparent) 80%,
+      color-mix(in srgb, var(--color-ink) 12%, transparent) 90%,
+      transparent 100%
+    );
+  }
+}
+
+/* Hero entrance: one staged reveal on load, and nothing else on the site moves
+   without the user driving it. Declared only for people who have not asked for
+   reduced motion, so with the preference set the hero simply renders — no
+   animation, no delay, no flash of missing text. */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+      filter: none;
+    }
+  }
+
+  .rise {
+    animation: hero-rise 640ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .rise-1 {
+    animation-delay: 100ms;
+  }
+
+  .rise-2 {
+    animation-delay: 200ms;
+  }
+
+  .rise-3 {
+    animation-delay: 300ms;
   }
 }
 
