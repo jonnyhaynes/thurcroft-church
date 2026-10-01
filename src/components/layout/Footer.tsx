@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { YorkshireRose } from "@/components/layout/YorkshireRose";
 import { Container } from "@/components/ui/Container";
 import { footerNav, site } from "@/lib/site";
 
@@ -77,6 +78,18 @@ export function Footer() {
               A Church Near You
             </a>
             .
+          </p>
+          <p className="mt-2">
+            Forged in Yorkshire
+            <YorkshireRose className="mx-1 inline-block h-4 w-4 -translate-y-px align-middle" /> by{" "}
+            <a
+              href="https://www.colouringcode.com"
+              rel="noopener noreferrer"
+              target="_blank"
+              className="no-underline hover:text-accent"
+            >
+              Colouring Code
+            </a>
           </p>
         </div>
       </Container>
